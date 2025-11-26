@@ -1,0 +1,16 @@
+name: trigger-n8n
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  notify-n8n:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger n8n workflow
+        run: |
+          curl -X POST https://<your-n8n-url>/webhook-test \
+          -H "Content-Type: application/json" \
+          -d "{\"repo\":\"${{ github.repository }}\", \"commit\":\"${{ github.sha }}\"}"
