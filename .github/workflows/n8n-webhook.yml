@@ -11,6 +11,6 @@ jobs:
     steps:
       - name: Trigger n8n workflow
         run: |
-          curl -X POST https://kajaln8n.app.n8n.cloud/webhook-test/webhook-test \
+          curl -X POST https://kajaln8n.app.n8n.cloud/webhook/webhook-test \
           -H "Content-Type: application/json" \
           -d "{\"repo\":\"${{ github.repository }}\", \"commit\":\"${{ github.sha }}\"}"
