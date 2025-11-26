@@ -13,4 +13,4 @@ jobs:
         run: |
           curl -X POST https://kajaln8n.app.n8n.cloud/webhook/github-push \
           -H "Content-Type: application/json" \
-          -d "{\"repo\":\"${{ github.repository }}\", \"commit\":\"${{ github.sha }}\"}"
+          -d "{\"repo\": \"${{ github.repository }}\", \"commit\": \"${{ github.sha }}\"}"
