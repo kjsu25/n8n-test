@@ -9,8 +9,8 @@ jobs:
   notify-n8n:
     runs-on: ubuntu-latest
     steps:
-      - name: Trigger n8n workflow
+      - name: Call n8n webhook
         run: |
-          curl -X POST https://kajaln8n.app.n8n.cloud/webhook/webhook-test \
+          curl -X POST https://<https://kajaln8n.app.n8n.cloud/webhook/github-push>/github-push \
           -H "Content-Type: application/json" \
           -d "{\"repo\":\"${{ github.repository }}\", \"commit\":\"${{ github.sha }}\"}"
